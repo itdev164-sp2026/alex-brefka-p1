@@ -2,15 +2,15 @@
   display: grid;
   margin: 0;
   /* https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
-  --w: 280px;
-  --n: 2;
+  --w: 200px;
+  --n: 3;
   gap: var(--size-gap);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(max(var(--w), 100%/ (var(--n) + 1) + 0.1%), 1fr));
+  text-align: center;
   margin-bottom: var(--size-gap);
   margin-top: var(--size-gap);
+  list-style: none;
 }
 
 .listItem {
@@ -51,4 +51,16 @@
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
+}
+
+.centerImage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+
+p {
+  margin: 0 auto;
+  margin-bottom: var(--space-3);
+
 }
