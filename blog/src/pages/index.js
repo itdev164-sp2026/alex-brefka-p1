@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -25,15 +26,21 @@ export default IndexPage
 
 export const query = graphql`
    {
-    allContentfulBlogPost {
-      edges {
-        node {
-          id
-          title
-          slug
-          category
+  allContentfulBlogPost {
+    edges {
+      node {
+        title
+        slug
+        category
+        heroImage {
+          gatsbyImageData(
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            width: 300
+          )
         }
       }
     }
   }
+}
   `
