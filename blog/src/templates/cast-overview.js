@@ -2,15 +2,18 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
-
+import { StyledHeading } from "../components/StyledHeading";
+import * as styles from "../components/index.module.css"
 const BlogPost = ({ data }) => {
     const { title } = data.contentfulBlogPost;
 
     return (
         <Layout>
-            <h1>{title}</h1>
-            <div><GatsbyImage image={data.contentfulBlogPost.heroImage.gatsbyImageData} /></div>
-            <div dangerouslySetInnerHTML={{ __html: data.contentfulBlogPost.body.childMarkdownRemark.html }} />
+            <StyledHeading>{title}</StyledHeading>
+            <div className={styles.centerImage}>
+                <GatsbyImage image={data.contentfulBlogPost.heroImage.gatsbyImageData} />
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: data.contentfulBlogPost.body.childMarkdownRemark.html }} className={styles.textCenter} />
         </Layout>
     )
 }

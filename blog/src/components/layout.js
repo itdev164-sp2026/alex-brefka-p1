@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components"
 
 import Header from "./header"
 import "./layout.css"
-import { Gray } from "./themes/Gray"
+import { Blue } from "./themes/Blue"
 
 const Content = styled.div`
   margin: 0 auto;
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
 
-    <ThemeProvider theme={Gray}>
+    <ThemeProvider theme={Blue}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Content>
         <main>{children}</main>
